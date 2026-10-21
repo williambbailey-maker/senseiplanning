@@ -1,0 +1,245 @@
+[
+  {
+    "key": "p1",
+    "track": "Product",
+    "title": "Subway design live across app, SEO pages, age gate",
+    "owner": "Claude Code",
+    "due": "2026-10-27",
+    "status": "in_progress",
+    "notes": "Branch merged to main; QA on iPhone Safari + Chrome Android outstanding"
+  },
+  {
+    "key": "p2",
+    "track": "Product",
+    "title": "Scraper clean 5 nights straight + stale-write alert",
+    "owner": "William",
+    "due": "2026-10-27",
+    "status": "at_risk",
+    "notes": "Last successful scrape was Oct 4; nightly job not running. Run manually: bash ~/sensei/sensei.sh scrape"
+  },
+  {
+    "key": "p3",
+    "track": "Product",
+    "title": "Stale-data guard in app (menu-as-of, hide >48h)",
+    "owner": "Claude Code",
+    "due": "2026-10-27",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "p4",
+    "track": "Product",
+    "title": "Rebuild all 108 SEO pages, freeze content",
+    "owner": "William",
+    "due": "2026-10-27",
+    "status": "not_started",
+    "notes": "Run after scraper confirmed clean"
+  },
+  {
+    "key": "p5",
+    "track": "Product",
+    "title": "Remove dispensaries with broken/empty menus",
+    "owner": "William",
+    "due": "2026-10-27",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "l1",
+    "track": "Legal",
+    "title": "Form entity; move domain, Supabase, GitHub, Zoho under it",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": "LLC now, convert later if needed. Critical path."
+  },
+  {
+    "key": "l2",
+    "track": "Legal",
+    "title": "Terms, privacy policy, persisted 21+ age gate",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "l3",
+    "track": "Legal",
+    "title": "Not-a-seller disclaimer on every menu page",
+    "owner": "Claude Code",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "l4",
+    "track": "Legal",
+    "title": "Read OCM advertising/marketing regs (primary text)",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": "Before any brand-facing or sponsored language"
+  },
+  {
+    "key": "l5",
+    "track": "Legal",
+    "title": "Replace MTA line bullets with original lookalikes",
+    "owner": "Claude Code",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": "Trademark exposure not acceptable at public launch"
+  },
+  {
+    "key": "i1",
+    "track": "Infra & SEO",
+    "title": "Flip public; robots.txt + sitemap submitted to Search Console",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "i2",
+    "track": "Infra & SEO",
+    "title": "Canonicals, meta, Organization/LocalBusiness/ItemList schema",
+    "owner": "Claude Code",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "i3",
+    "track": "Infra & SEO",
+    "title": "PostHog brand-attributed events; Monday report tested",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "i4",
+    "track": "Infra & SEO",
+    "title": "Uptime monitor + Supabase backups",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "i5",
+    "track": "Infra & SEO",
+    "title": "hello@sensei.nyc forwarding confirmed",
+    "owner": "William",
+    "due": "2026-10-29",
+    "status": "not_started",
+    "notes": "Zoho → Gmail"
+  },
+  {
+    "key": "c1",
+    "track": "Comms",
+    "title": "One-page Sensei sheet with rate-card placeholder",
+    "owner": "William",
+    "due": "2026-10-30",
+    "status": "not_started",
+    "notes": "Ink Minimal"
+  },
+  {
+    "key": "c2",
+    "track": "Comms",
+    "title": "Target list: 10 NY brands + 5 NYC writers/newsletters",
+    "owner": "William",
+    "due": "2026-10-31",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "c3",
+    "track": "Comms",
+    "title": "Send sheet; launch post; social handles claimed",
+    "owner": "William",
+    "due": "2026-11-01",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "c4",
+    "track": "Comms",
+    "title": "Start ad test (verify network allows cannabis)",
+    "owner": "William",
+    "due": "2026-11-01",
+    "status": "at_risk",
+    "notes": "Google/Meta restrict cannabis ads; confirm where prior test ran"
+  },
+  {
+    "key": "c5",
+    "track": "Comms",
+    "title": "Five brand discovery conversations opened",
+    "owner": "William",
+    "due": "2026-11-01",
+    "status": "not_started",
+    "notes": "Learn spend on Weedmaps/Leafly and proof required"
+  },
+  {
+    "key": "d30a",
+    "track": "Day 30",
+    "title": "Scraper off the Mac (residential proxy on VPS)",
+    "owner": "William",
+    "due": "2026-12-01",
+    "status": "not_started",
+    "notes": "Single biggest zero-out risk"
+  },
+  {
+    "key": "d30b",
+    "track": "Day 30",
+    "title": "80%+ of pages indexed",
+    "owner": "Automation",
+    "due": "2026-12-01",
+    "status": "not_started",
+    "notes": "Fail signal: under 50%"
+  },
+  {
+    "key": "d30c",
+    "track": "Day 30",
+    "title": "One return hook shipped (price comparison)",
+    "owner": "Claude Code",
+    "due": "2026-12-01",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "d30d",
+    "track": "Day 30",
+    "title": "Move personal tables out of Sensei Supabase",
+    "owner": "William",
+    "due": "2026-12-01",
+    "status": "not_started",
+    "notes": "Flow (boards, columns, tasks, notes), NearNosh (votes, scores view, vote function), metropole_plans, bill tracker (banc_* tables + ledger schema). Finance tables are empty. Keep plan schema."
+  },
+  {
+    "key": "d60a",
+    "track": "Day 60",
+    "title": "First brand placement live (paid or signed pilot)",
+    "owner": "William",
+    "due": "2027-01-01",
+    "status": "not_started",
+    "notes": "Fail signal: no placement"
+  },
+  {
+    "key": "d60b",
+    "track": "Day 60",
+    "title": "Second data source feeding 10+ dispensaries",
+    "owner": "William",
+    "due": "2027-01-01",
+    "status": "not_started",
+    "notes": ""
+  },
+  {
+    "key": "d90a",
+    "track": "Day 90",
+    "title": "One paying brand + second in contract, or pivot decision",
+    "owner": "William",
+    "due": "2027-01-30",
+    "status": "not_started",
+    "notes": "Set the kill number now"
+  }
+]

@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f6f6f4;
+  --panel: #ffffff;
+  --fg: #111111;
+  --muted: #5e5f63;
+  --line: #dadbdd;
+  --line-strong: #111111;
+  --done: #00933c;
+  --prog: #e8a400;
+  --risk: #ee352e;
+  --todo: #9a9ca1;
+  --accent: #0039a6;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0b;
+    --panel: #161616;
+    --fg: #f4f4f2;
+    --muted: #9b9ca0;
+    --line: #2a2a2b;
+    --line-strong: #f4f4f2;
+    --todo: #6e7075;
+    --accent: #5b8def;
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-bg text-fg font-sans;
+    font-size: 15px;
+    line-height: 1.45;
+    min-height: 100dvh;
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+  a {
+    color: var(--accent);
+  }
+}
+
+@layer components {
+  .wrap {
+    max-width: 860px;
+    margin-inline: auto;
+    padding-top: calc(env(safe-area-inset-top, 0px) + 20px);
+    padding-bottom: calc(env(safe-area-inset-bottom, 0px) + 64px);
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-fg px-4 font-bold text-bg disabled:opacity-40;
+    min-height: 44px;
+    font-size: 14px;
+  }
+  .btn-ghost {
+    @apply btn bg-transparent text-fg;
+    border: 1.5px solid var(--line);
+  }
+  .btn-danger {
+    @apply btn text-white;
+    background: var(--risk);
+  }
+  .chip {
+    @apply inline-flex items-center rounded-full px-3 font-semibold;
+    min-height: 44px;
+    font-size: 13px;
+    border: 1.5px solid var(--line);
+  }
+  .chip[aria-pressed='true'] {
+    @apply bg-fg text-bg;
+    border-color: var(--fg);
+  }
+  .field {
+    @apply grid gap-1 text-xs font-semibold uppercase tracking-wider text-muted;
+  }
+  .input {
+    @apply w-full min-w-0 bg-bg px-3 py-2 font-normal normal-case tracking-normal text-fg;
+    font-size: 16px; /* prevents iOS zoom on focus */
+    min-height: 44px;
+    border: 1.5px solid var(--line);
+    border-radius: 0;
+  }
+  textarea.input {
+    min-height: 96px;
+    line-height: 1.5;
+    resize: vertical;
+  }
+  .rule-3 {
+    border-bottom: 3px solid var(--line-strong);
+  }
+  .rule-2 {
+    border-bottom: 2px solid var(--line-strong);
+  }
+  .rule-1 {
+    border-bottom: 1px solid var(--line);
+  }
+  .mono {
+    @apply font-mono;
+    font-variant-numeric: tabular-nums;
+  }
+  .display {
+    @apply font-extrabold;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Status circle: 26px visual, 44px hit area. */
+.status {
+  @apply grid shrink-0 place-items-center;
+  width: 44px;
+  height: 44px;
+  margin: -9px;
+}
+.status > span {
+  @apply grid place-items-center rounded-full;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--todo);
+}
+.status[data-s='in_progress'] > span {
+  border-color: var(--prog);
+  background: linear-gradient(90deg, var(--prog) 50%, transparent 50%);
+}
+.status[data-s='done'] > span {
+  border-color: var(--done);
+  background: var(--done);
+}
+.status[data-s='done'] > span::after {
+  content: '';
+  width: 9px;
+  height: 5px;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+.status[data-s='at_risk'] > span {
+  border-color: var(--risk);
+  background: var(--risk);
+}
+.status[data-s='at_risk'] > span::after {
+  content: '!';
+  color: #fff;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.sheet-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.5);
+  z-index: 40;
+}
+.sheet {
+  position: fixed;
+  z-index: 50;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 92dvh;
+  overflow-y: auto;
+  background: var(--bg);
+  border-top: 3px solid var(--line-strong);
+  padding: 20px max(16px, env(safe-area-inset-left, 0px)) calc(env(safe-area-inset-bottom, 0px) + 24px);
+}
+@media (min-width: 700px) {
+  .sheet {
+    left: 50%;
+    bottom: auto;
+    top: 8dvh;
+    width: 620px;
+    transform: translateX(-50%);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--line-strong);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal 0.16s ease-out;
+  }
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      transform: translateY(-3px);
+    }
+  }
+}
